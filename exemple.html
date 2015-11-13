@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Example</title>
+		<script>
+			function Animal(name) {
+				this.name = name;
+			}
+			Animal.prototype.getName = function() {
+				return this.name;
+			}
+			function Dog(name) {
+				this.name = name;
+			}
+			Dog.prototype = new Animal();
+			Dog.prototype.bark = function() {
+				return 'Dog ' + this.name + ' is barking';
+			}
+			var dog = new Dog('Aban');
+			dog.getName() === 'Aban';
+			dog.bark() === 'Dog Aban is barking';
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
